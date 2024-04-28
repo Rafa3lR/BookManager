@@ -141,6 +141,7 @@
             // 
             // cbSituation
             // 
+            cbSituation.DropDownStyle = ComboBoxStyle.DropDownList;
             cbSituation.Font = new Font("Segoe UI", 9.75F);
             cbSituation.FormattingEnabled = true;
             cbSituation.Items.AddRange(new object[] { "I want to read", "Reading", "I've already read it", "Rereading", "I've abandoned it" });
@@ -148,7 +149,6 @@
             cbSituation.Name = "cbSituation";
             cbSituation.Size = new Size(243, 25);
             cbSituation.TabIndex = 7;
-            cbSituation.Text = "I want to read";
             // 
             // CadBooks
             // 

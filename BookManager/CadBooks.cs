@@ -165,6 +165,7 @@ namespace BookManager._1_Modulo1
             {
                 case 0:
                     btnDelete.Hide();
+                    cbSituation.Text = "I want to read";
                     break;
                 default:
                     tbBookTitle.Text = Main.title[Books.index].ToString();
