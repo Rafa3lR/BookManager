@@ -109,7 +109,7 @@ namespace BookManager._1_Modulo1
             foundNode = tree.Search(tree.root, Convert.ToInt32(tbID.Text));
         }
 
-        private static void PopulateBooks(int i)
+        public static void PopulateBooks(int i)
         {
             books.Add(new Books());
 

@@ -26,20 +26,28 @@ namespace BookManager._1_Modulo1
             switch (Main.openEdit)
             {
                 case 0:
+                    try
                     {
-                        PopulatingLists();
-                        int index = Main.id.Count() - 1;
-                        DrawingNewBook(index);
-                        Tdata aux = CreatingTreeAuxData();
-                        InsertingAVLTree(aux);
-                        SavingAndUpdatingDateFilters();
-                        Main.quantBooksCreated++;
-                        this.Close();
-                        break;
-                    }
+                        {
+                            PopulatingLists();
+                            int index = Main.id.Count() - 1;
+                            DrawingNewBook(index);
+                            Tdata aux = CreatingTreeAuxData();
+                            InsertingAVLTree(aux);
+                            SavingAndUpdatingDateFilters();
+                            Main.quantBooksCreated++;
+                            this.Close();
+                            
+                        }
+                    } catch { }
+                    break;
 
                 default:
-                    UpdatingBook();
+                    try
+                    {
+                        UpdatingBook();
+                    } catch { }
+                    
                     break;
             }
         }
@@ -113,7 +121,10 @@ namespace BookManager._1_Modulo1
             UpdatingBackColor();
             Main.books[Books.index].BTNbooks = ColorTranslator.FromHtml(Main.situation[Books.index]);
             SaveInTXT.WriteTXT();
+            SaveInTXT.ReadTXT();
             Main.openEdit = 0;
+            Main.flowPanelBooks.Controls.Remove(Main.books[Books.index]);
+            Main.flowPanelBooks.Controls.Add(Main.books[Books.index]);
             this.Close();
         }
 
@@ -196,9 +207,10 @@ namespace BookManager._1_Modulo1
             {
                 DeleteAVLTree();
                 DeleteList();
-                Main.flowPanelBooks.Controls.Remove(Main.books[Books.index]);
+                //Main.flowPanelBooks.Controls.Remove(Main.books[Books.index]);
                 Main.books.RemoveAt(Books.index);
                 SavingAndUpdatingDateFilter();
+                Main.FilterAndDrawBooks();
                 this.Close();
             }
         }
