@@ -42,6 +42,8 @@
             tbID = new TextBox();
             dateTimePickerMax = new DateTimePicker();
             flowPanelBooks = new FlowLayoutPanel();
+            cbSituationFilter = new ComboBox();
+            label3 = new Label();
             pnTop.SuspendLayout();
             pnFilters.SuspendLayout();
             SuspendLayout();
@@ -85,6 +87,8 @@
             // 
             pnFilters.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             pnFilters.BackColor = SystemColors.ControlDarkDark;
+            pnFilters.Controls.Add(label3);
+            pnFilters.Controls.Add(cbSituationFilter);
             pnFilters.Controls.Add(tbAuthor);
             pnFilters.Controls.Add(label2);
             pnFilters.Controls.Add(label1);
@@ -149,7 +153,7 @@
             // 
             btnUpdate.BackColor = SystemColors.ButtonFace;
             btnUpdate.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
-            btnUpdate.Location = new Point(54, 289);
+            btnUpdate.Location = new Point(53, 361);
             btnUpdate.Name = "btnUpdate";
             btnUpdate.Size = new Size(74, 33);
             btnUpdate.TabIndex = 7;
@@ -205,6 +209,28 @@
             flowPanelBooks.Size = new Size(613, 406);
             flowPanelBooks.TabIndex = 2;
             // 
+            // cbSituationFilter
+            // 
+            cbSituationFilter.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbSituationFilter.Font = new Font("Segoe UI", 9.75F);
+            cbSituationFilter.FormattingEnabled = true;
+            cbSituationFilter.Items.AddRange(new object[] { "All", "I want to read", "Reading", "I've already read it", "Rereading", "I've abandoned it" });
+            cbSituationFilter.Location = new Point(0, 295);
+            cbSituationFilter.Name = "cbSituationFilter";
+            cbSituationFilter.Size = new Size(187, 25);
+            cbSituationFilter.TabIndex = 8;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label3.ForeColor = SystemColors.HighlightText;
+            label3.Location = new Point(0, 271);
+            label3.Name = "label3";
+            label3.Size = new Size(72, 21);
+            label3.TabIndex = 9;
+            label3.Text = "Situation";
+            // 
             // Main
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
@@ -241,5 +267,7 @@
         public static DateTimePicker dateTimePickerMax;
         public static DateTimePicker dateTimePickerMin;
         public static FlowLayoutPanel flowPanelBooks;
+        public static ComboBox cbSituationFilter;
+        private Label label3;
     }
 }

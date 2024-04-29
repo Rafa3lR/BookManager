@@ -15,7 +15,8 @@ namespace BookManager._1_Modulo1
         {
             SaveInTXT.ReadTXT();
             UpdatingDateFilters();
-            FilterAndDrawBooks();
+            cbSituationFilter.Text = "All";
+            FilterAndDrawBooks();  
         }
 
         private static void UpdatingDateFilters()
@@ -50,6 +51,7 @@ namespace BookManager._1_Modulo1
             {
                 try
                 {
+                    cbSituationFilter.Text = "All";
                     Node foundNode;
                     SearchingAVLTree(out foundNode);
                     BookFound(foundNode);
@@ -62,34 +64,77 @@ namespace BookManager._1_Modulo1
                 //Title, Author and ID Filters
                 for (int i = 0; i < id.Count(); i++)
                 {
-                    if (tbID.Text == "Search ID" && tbTitle.Text == "Search Title" && tbAuthor.Text == "Search Author")
+                    if (cbSituationFilter.Text == "All")
                     {
-                        if (pubDate[i] >= dateTimePickerMin.Value && pubDate[i] <= dateTimePickerMax.Value)
+                        TextBoxFilters(i);
+                    }
+                    else if (cbSituationFilter.Text == "I want to read")
+                    {
+                        if (situation[i] == "DeepSkyBlue")
                         {
-                            PopulateBooks(i);
+                            TextBoxFilters(i);
                         }
                     }
-                    else if (tbTitle.Text != "" && tbAuthor.Text == "Search Author")
+                    else if (cbSituationFilter.Text == "Reading")
                     {
-                        if (pubDate[i] >= dateTimePickerMin.Value && pubDate[i] <= dateTimePickerMax.Value && title[i].StartsWith(tbTitle.Text))
+                        if (situation[i] == "Yellow")
                         {
-                            PopulateBooks(i);
+                            TextBoxFilters(i);
                         }
                     }
-                    else if (tbAuthor.Text != "" && tbTitle.Text == "Search Title")
+                    else if (cbSituationFilter.Text == "I've already read it")
                     {
-                        if (pubDate[i] >= dateTimePickerMin.Value && pubDate[i] <= dateTimePickerMax.Value && author[i].StartsWith(tbAuthor.Text))
+                        if (situation[i] == "LawnGreen")
                         {
-                            PopulateBooks(i);
+                            TextBoxFilters(i);
                         }
                     }
-                    else if (tbTitle.Text != "" && tbAuthor.Text != "")
+                    else if (cbSituationFilter.Text == "Rereading")
                     {
-                        if (pubDate[i] >= dateTimePickerMin.Value && pubDate[i] <= dateTimePickerMax.Value && title[i].StartsWith(tbTitle.Text) && author[i].StartsWith(tbAuthor.Text))
+                        if (situation[i] == "Orange") 
                         {
-                            PopulateBooks(i);
+                            TextBoxFilters(i);
                         }
                     }
+                    else if (cbSituationFilter.Text == "I've abandoned it")
+                    {
+                        if (situation[i] == "DimGray")
+                        {
+                            TextBoxFilters(i);
+                        }
+                    }
+                }
+            }
+        }
+
+        private static void TextBoxFilters(int i)
+        {
+            if (tbID.Text == "Search ID" && tbTitle.Text == "Search Title" && tbAuthor.Text == "Search Author")
+            {
+                if (pubDate[i] >= dateTimePickerMin.Value && pubDate[i] <= dateTimePickerMax.Value)
+                {
+                    PopulateBooks(i);
+                }
+            }
+            else if (tbTitle.Text != "" && tbAuthor.Text == "Search Author")
+            {
+                if (pubDate[i] >= dateTimePickerMin.Value && pubDate[i] <= dateTimePickerMax.Value && title[i].StartsWith(tbTitle.Text))
+                {
+                    PopulateBooks(i);
+                }
+            }
+            else if (tbAuthor.Text != "" && tbTitle.Text == "Search Title")
+            {
+                if (pubDate[i] >= dateTimePickerMin.Value && pubDate[i] <= dateTimePickerMax.Value && author[i].StartsWith(tbAuthor.Text))
+                {
+                    PopulateBooks(i);
+                }
+            }
+            else if (tbTitle.Text != "" && tbAuthor.Text != "")
+            {
+                if (pubDate[i] >= dateTimePickerMin.Value && pubDate[i] <= dateTimePickerMax.Value && title[i].StartsWith(tbTitle.Text) && author[i].StartsWith(tbAuthor.Text))
+                {
+                    PopulateBooks(i);
                 }
             }
         }
