@@ -35,12 +35,11 @@ namespace BookManager._1_Modulo1
             btnBooks.Parent = panel1;
         }
 
-        private int _index;
         public static int index;
 
         private void btnBooks_Click(object sender, EventArgs e)
         {
-            index = _index;
+            index = Main.id.IndexOf(Convert.ToInt32(lblID.Text));
             Main.openEdit = 1;
             CadBooks books = new CadBooks();
             books.Show();
@@ -58,7 +57,7 @@ namespace BookManager._1_Modulo1
 
         private void lblBookTitle_Click(object sender, EventArgs e)
         {
-            index = _index;
+            index = Main.id.IndexOf(Convert.ToInt32(lblID.Text));
             Main.openEdit = 1;
             CadBooks books = new CadBooks();
             books.Show();
@@ -76,7 +75,7 @@ namespace BookManager._1_Modulo1
 
         private void lblAuthorName_Click(object sender, EventArgs e)
         {
-            index = _index;
+            index = Main.id.IndexOf(Convert.ToInt32(lblID.Text));
             Main.openEdit = 1;
             CadBooks books = new CadBooks();
             books.Show();
@@ -94,7 +93,7 @@ namespace BookManager._1_Modulo1
 
         private void lblID_Click(object sender, EventArgs e)
         {
-            index = _index;
+            index = Main.id.IndexOf(Convert.ToInt32(lblID.Text));
             Main.openEdit = 1;
             CadBooks books = new CadBooks();
             books.Show();
@@ -112,7 +111,7 @@ namespace BookManager._1_Modulo1
 
         private void lblPubDate_Click(object sender, EventArgs e)
         {
-            index = _index;
+            index = Main.id.IndexOf(Convert.ToInt32(lblID.Text));
             Main.openEdit = 1;
             CadBooks books = new CadBooks();
             books.Show();
@@ -136,11 +135,6 @@ namespace BookManager._1_Modulo1
         public DateTime PubDate
         {
             set { lblPubDate.Text = value.ToString(); }
-        }
-
-        public int Index
-        {
-            set { _index = value; }
         }
 
         public Color BTNbooks

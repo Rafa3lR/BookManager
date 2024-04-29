@@ -59,7 +59,6 @@ namespace BookManager._1_Modulo1
             Main.books[index].BookTitle = Main.title[index];
             Main.books[index].AuthorName = Main.author[index];
             Main.books[index].PubDate = Main.pubDate[index];
-            Main.books[index].Index = index;
             DefiningBackColor();
             Main.books[index].BTNbooks = ColorTranslator.FromHtml(Main.situation[index]);
             Main.flowPanelBooks.Controls.Add(Main.books[index]);
@@ -208,10 +207,9 @@ namespace BookManager._1_Modulo1
             {
                 DeleteAVLTree();
                 DeleteList();
-                //Main.flowPanelBooks.Controls.Remove(Main.books[Books.index]);
                 Main.books.RemoveAt(Books.index);
                 SavingAndUpdatingDateFilter();
-                Main.FilterAndDrawBooks();
+                Main.flowPanelBooks.Controls.RemoveAt(Books.index);
                 this.Close();
             }
         }

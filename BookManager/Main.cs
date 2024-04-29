@@ -101,7 +101,6 @@ namespace BookManager._1_Modulo1
             books[0].BookTitle = foundNode.data.bookTitle;
             books[0].AuthorName = foundNode.data.author;
             books[0].PubDate = foundNode.data.pubDate;
-            books[0].Index = 0;
         }
 
         private static void SearchingAVLTree(out Node foundNode)
@@ -118,7 +117,6 @@ namespace BookManager._1_Modulo1
             books[i].AuthorName = author[i];
             books[i].PubDate = pubDate[i];
             books[i].BTNbooks = Color.FromName(situation[i]);
-            books[i].Index = i;
 
             flowPanelBooks.Controls.Add(books[i]);
         }
