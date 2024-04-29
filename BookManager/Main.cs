@@ -16,7 +16,7 @@ namespace BookManager._1_Modulo1
             SaveInTXT.ReadTXT();
             UpdatingDateFilters();
             cbSituationFilter.Text = "All";
-            FilterAndDrawBooks();  
+            FilterAndDrawBooks();
         }
 
         private static void UpdatingDateFilters()
@@ -57,7 +57,7 @@ namespace BookManager._1_Modulo1
                     BookFound(foundNode);
                     flowPanelBooks.Controls.Add(books[0]);
                 }
-                catch {}
+                catch { }
             }
             else
             {
@@ -91,7 +91,7 @@ namespace BookManager._1_Modulo1
                     }
                     else if (cbSituationFilter.Text == "Rereading")
                     {
-                        if (situation[i] == "Orange") 
+                        if (situation[i] == "Orange")
                         {
                             TextBoxFilters(i);
                         }
@@ -277,6 +277,11 @@ namespace BookManager._1_Modulo1
             {
                 FilterAndDrawBooks();
             }
+        }
+
+        private void cbSituationFilter_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            FilterAndDrawBooks();
         }
     }
 }

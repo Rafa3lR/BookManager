@@ -33,6 +33,8 @@
             lbFilters = new Label();
             btnAddBook = new Button();
             pnFilters = new Panel();
+            label3 = new Label();
+            cbSituationFilter = new ComboBox();
             tbAuthor = new TextBox();
             label2 = new Label();
             label1 = new Label();
@@ -42,8 +44,6 @@
             tbID = new TextBox();
             dateTimePickerMax = new DateTimePicker();
             flowPanelBooks = new FlowLayoutPanel();
-            cbSituationFilter = new ComboBox();
-            label3 = new Label();
             pnTop.SuspendLayout();
             pnFilters.SuspendLayout();
             SuspendLayout();
@@ -102,6 +102,29 @@
             pnFilters.Name = "pnFilters";
             pnFilters.Size = new Size(187, 406);
             pnFilters.TabIndex = 1;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label3.ForeColor = SystemColors.HighlightText;
+            label3.Location = new Point(0, 271);
+            label3.Name = "label3";
+            label3.Size = new Size(72, 21);
+            label3.TabIndex = 9;
+            label3.Text = "Situation";
+            // 
+            // cbSituationFilter
+            // 
+            cbSituationFilter.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbSituationFilter.Font = new Font("Segoe UI", 9.75F);
+            cbSituationFilter.FormattingEnabled = true;
+            cbSituationFilter.Items.AddRange(new object[] { "All", "I want to read", "Reading", "I've already read it", "Rereading", "I've abandoned it" });
+            cbSituationFilter.Location = new Point(0, 295);
+            cbSituationFilter.Name = "cbSituationFilter";
+            cbSituationFilter.Size = new Size(187, 25);
+            cbSituationFilter.TabIndex = 8;
+            cbSituationFilter.SelectedIndexChanged += cbSituationFilter_SelectedIndexChanged;
             // 
             // tbAuthor
             // 
@@ -209,28 +232,6 @@
             flowPanelBooks.Size = new Size(613, 406);
             flowPanelBooks.TabIndex = 2;
             // 
-            // cbSituationFilter
-            // 
-            cbSituationFilter.DropDownStyle = ComboBoxStyle.DropDownList;
-            cbSituationFilter.Font = new Font("Segoe UI", 9.75F);
-            cbSituationFilter.FormattingEnabled = true;
-            cbSituationFilter.Items.AddRange(new object[] { "All", "I want to read", "Reading", "I've already read it", "Rereading", "I've abandoned it" });
-            cbSituationFilter.Location = new Point(0, 295);
-            cbSituationFilter.Name = "cbSituationFilter";
-            cbSituationFilter.Size = new Size(187, 25);
-            cbSituationFilter.TabIndex = 8;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.ForeColor = SystemColors.HighlightText;
-            label3.Location = new Point(0, 271);
-            label3.Name = "label3";
-            label3.Size = new Size(72, 21);
-            label3.TabIndex = 9;
-            label3.Text = "Situation";
-            // 
             // Main
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
@@ -261,6 +262,7 @@
         private Button btnUpdate;
         private Label label2;
         private Label label1;
+        private Label label3;
         public static TextBox tbID;
         public static TextBox tbTitle;
         public static TextBox tbAuthor;
@@ -268,6 +270,5 @@
         public static DateTimePicker dateTimePickerMin;
         public static FlowLayoutPanel flowPanelBooks;
         public static ComboBox cbSituationFilter;
-        private Label label3;
     }
 }
