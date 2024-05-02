@@ -122,8 +122,6 @@ namespace BookManager._1_Modulo1
             SaveInTXT.WriteTXT();
             SaveInTXT.ReadTXT();
             Main.openEdit = 0;
-            Main.flowPanelBooks.Controls.Remove(Main.books[Books.index]);
-            Main.flowPanelBooks.Controls.Add(Main.books[Books.index]);
             this.Close();
         }
 
