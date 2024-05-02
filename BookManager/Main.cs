@@ -118,21 +118,21 @@ namespace BookManager._1_Modulo1
             }
             else if (tbTitle.Text != "" && tbAuthor.Text == "Search Author")
             {
-                if (pubDate[i] >= dateTimePickerMin.Value && pubDate[i] <= dateTimePickerMax.Value && title[i].StartsWith(tbTitle.Text))
+                if (pubDate[i] >= dateTimePickerMin.Value && pubDate[i] <= dateTimePickerMax.Value && title[i].ToLower().StartsWith(tbTitle.Text.ToLower()))
                 {
                     PopulateBooks(i);
                 }
             }
             else if (tbAuthor.Text != "" && tbTitle.Text == "Search Title")
             {
-                if (pubDate[i] >= dateTimePickerMin.Value && pubDate[i] <= dateTimePickerMax.Value && author[i].StartsWith(tbAuthor.Text))
+                if (pubDate[i] >= dateTimePickerMin.Value && pubDate[i] <= dateTimePickerMax.Value && author[i].ToLower().StartsWith(tbAuthor.Text.ToLower()))
                 {
                     PopulateBooks(i);
                 }
             }
             else if (tbTitle.Text != "" && tbAuthor.Text != "")
             {
-                if (pubDate[i] >= dateTimePickerMin.Value && pubDate[i] <= dateTimePickerMax.Value && title[i].StartsWith(tbTitle.Text) && author[i].StartsWith(tbAuthor.Text))
+                if (pubDate[i] >= dateTimePickerMin.Value && pubDate[i] <= dateTimePickerMax.Value && title[i].ToLower().StartsWith(tbTitle.Text.ToLower()) && author[i].ToLower().StartsWith(tbAuthor.Text.ToLower()))
                 {
                     PopulateBooks(i);
                 }
