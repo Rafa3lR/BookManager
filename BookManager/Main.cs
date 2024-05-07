@@ -247,6 +247,7 @@ namespace BookManager._1_Modulo1
                 {
                     tbID.ForeColor = Color.FromArgb(100, 114, 114, 114);
                     tbID.Text = "Search ID";
+                    btnAddBook.Focus();
                 }
                 FilterAndDrawBooks();
             }
@@ -260,6 +261,7 @@ namespace BookManager._1_Modulo1
                 {
                     tbTitle.ForeColor = Color.FromArgb(100, 114, 114, 114);
                     tbTitle.Text = "Search Title";
+                    btnAddBook.Focus();
                 }
                 FilterAndDrawBooks();
             }
@@ -273,6 +275,7 @@ namespace BookManager._1_Modulo1
                 {
                     tbAuthor.ForeColor = Color.FromArgb(100, 114, 114, 114);
                     tbAuthor.Text = "Search Author";
+                    btnAddBook.Focus();
                 }
                 FilterAndDrawBooks();
             }

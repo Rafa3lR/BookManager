@@ -158,6 +158,7 @@ namespace BookManager._1_Modulo1
         private void CadBooks_Load(object sender, EventArgs e)
         {
             dateTimePubDate.Value = DateTime.Today;
+            SaveInTXT.ReadTXT();
             switch (Main.openEdit)
             {
                 case 0:
