@@ -243,6 +243,11 @@ namespace BookManager._1_Modulo1
         {
             if (e.KeyCode == Keys.Enter)
             {
+                if (tbID.Text == "")
+                {
+                    tbID.ForeColor = Color.FromArgb(100, 114, 114, 114);
+                    tbID.Text = "Search ID";
+                }
                 FilterAndDrawBooks();
             }
         }
@@ -251,6 +256,11 @@ namespace BookManager._1_Modulo1
         {
             if (e.KeyCode == Keys.Enter)
             {
+                if (tbTitle.Text == "")
+                {
+                    tbTitle.ForeColor = Color.FromArgb(100, 114, 114, 114);
+                    tbTitle.Text = "Search Title";
+                }
                 FilterAndDrawBooks();
             }
         }
@@ -259,6 +269,11 @@ namespace BookManager._1_Modulo1
         {
             if (e.KeyCode == Keys.Enter)
             {
+                if (tbAuthor.Text == "")
+                {
+                    tbAuthor.ForeColor = Color.FromArgb(100, 114, 114, 114);
+                    tbAuthor.Text = "Search Author";
+                }
                 FilterAndDrawBooks();
             }
         }
