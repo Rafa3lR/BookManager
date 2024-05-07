@@ -30,12 +30,12 @@ namespace BookManager._1_Modulo1
                     {
                         {
                             PopulatingLists();
+                            Main.quantBooksCreated++;
                             int index = Main.id.Count() - 1;
                             DrawingNewBook(index);
                             Tdata aux = CreatingTreeAuxData();
                             InsertingAVLTree(aux);
                             SavingAndUpdatingDateFilters();
-                            Main.quantBooksCreated++;
                             this.Close();
                             
                         }
